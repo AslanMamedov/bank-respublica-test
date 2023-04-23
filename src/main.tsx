@@ -1,9 +1,9 @@
-import React from 'react';
+import { RouterProvider } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
-import { RouterProvider } from 'react-router-dom';
 import { router } from './Router';
+import React from 'react';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
