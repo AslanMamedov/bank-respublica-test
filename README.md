@@ -1,4 +1,4 @@
-# bank-respublica-test
+# bank-respublika-test
 React Texniki Tapşırıq
 
 Для запуска проекта: 
