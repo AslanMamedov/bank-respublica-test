@@ -28,9 +28,9 @@ const CreditInfoForm = memo(() => {
 				component={'form'}
 				sx={{
 					display: 'flex',
-					justifyContent: 'center',
-					flexDirection: 'column',
 					alignItems: 'center',
+					flexDirection: 'column',
+					justifyContent: 'center',
 				}}
 			>
 				<FormControl sx={{ width: '800px' }} error={false} variant="standard">
