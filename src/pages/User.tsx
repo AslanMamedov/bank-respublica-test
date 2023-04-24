@@ -1,3 +1,4 @@
+
 import { removeLoading, setLoading } from '../redux/slices/LoadingSlice';
 import { clearGuarantorLists } from '../redux/slices/RequestSlice';
 import { Box, Button, CircularProgress } from '@mui/material';
@@ -120,9 +121,9 @@ const User: FC = memo(() => {
 			>
 				<Box
 					sx={{
+						flex: '1 1 auto',
 						margin: '25px 0',
 						width: '100%',
-						flex: '1 1 auto',
 					}}
 					component={'div'}
 				>

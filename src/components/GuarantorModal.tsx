@@ -27,10 +27,10 @@ const GuarantorModal: FC<GuarantorModalProps> = memo(({ children }) => {
 
 	return (
 		<Dialog
-			open={guarantorIsOpen}
-			TransitionComponent={Transition}
 			keepMounted
 			maxWidth={'lg'}
+			open={guarantorIsOpen}
+			TransitionComponent={Transition}
 			onClose={() => dispatch(handleCloseGuarantor())}
 			aria-describedby="alert-dialog-slide-description"
 		>

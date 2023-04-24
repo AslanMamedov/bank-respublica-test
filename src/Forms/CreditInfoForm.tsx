@@ -4,10 +4,9 @@ import { handleNext } from '../redux/slices/StepperSlice';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { CreditForm, creditSchema } from '../types';
+import { InputField } from '../components';
 import { memo, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { InputField } from '../components';
-
 
 const CreditInfoForm = memo(() => {
 	const dispatch = useDispatch();
@@ -40,16 +39,16 @@ const CreditInfoForm = memo(() => {
 						<InputField label="Валюта" mask={''} name="currency" type="text" />
 						<InputField
 							label="Причина оформления бизнес кредита"
-							mask={''}
 							name="businessCredit"
 							type="text"
+							mask={''}
 						/>
 					</Box>
 					<Box
 						sx={{
+							gap: '10px',
 							width: '100%',
 							display: 'grid',
-							gap: '10px',
 							marginTop: '10px',
 							gridTemplateColumns: 'repeat(2, 1fr)',
 						}}
@@ -64,9 +63,9 @@ const CreditInfoForm = memo(() => {
 				</FormControl>
 				<Button
 					disabled={!methods.formState.isValid}
+					sx={{ marginTop: '20px' }}
 					variant="outlined"
 					type={'submit'}
-					sx={{ marginTop: '20px' }}
 				>
 					Далее
 				</Button>

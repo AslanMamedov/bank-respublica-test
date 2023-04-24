@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import Step from '@mui/material/Step';
 import Box from '@mui/material/Box';
 
-
 interface StepperProps {
 	renderProps: (activeStep: number) => ReactNode;
 }
@@ -18,10 +17,10 @@ const StepperContainer: FC<StepperProps> = memo(({ renderProps }) => {
 		<Box
 			sx={{
 				width: '100%',
-				flex: '1 1 auto',
-				minHeight: '100%',
 				height: '100%',
 				display: 'flex',
+				flex: '1 1 auto',
+				minHeight: '100%',
 				flexDirection: 'column',
 				justifyContent: 'space-between',
 			}}

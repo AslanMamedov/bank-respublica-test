@@ -64,9 +64,9 @@ const CreditModal: FC<ModalProps> = memo(({ index }) => {
 					aria-label="close"
 					onClick={onCloseHandler}
 					sx={{
-						position: 'absolute',
-						right: 8,
 						top: 8,
+						right: 8,
+						position: 'absolute',
 						color: (theme) => theme.palette.grey[500],
 					}}
 				>

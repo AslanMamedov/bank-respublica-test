@@ -21,14 +21,14 @@ const FormStepper = () => {
 	return (
 		<Box
 			sx={{
-				maxWidth: '100%',
-				border: '1px solid rgba(0, 0, 0, .2)',
 				display: 'flex',
+				flex: '1 1 auto',
+				maxWidth: '100%',
+				minHeight: '100%',
+				padding: '10px 10px',
 				flexDirection: 'column',
 				justifyContent: 'space-between',
-				padding: '10px 10px',
-				flex: '1 1 auto',
-				minHeight: '100%',
+				border: '1px solid rgba(0, 0, 0, .2)',
 			}}
 			className="stepper-form"
 		>

@@ -25,28 +25,27 @@ const SignIn: FC = memo(() => {
 	return (
 		<Box
 			sx={{
-				maxWidth: '500px',
+				gap: '20px',
 				width: '100%',
 				height: '100%',
-				border: '1px solid rgba(0, 0, 0, .2)',
+				display: 'grid',
+				maxWidth: '500px',
 				borderRadius: '4px',
 				padding: '10px 10px',
-				display: 'grid',
-				gap: '20px',
+				border: '1px solid rgba(0, 0, 0, .2)',
 			}}
 			component={'section'}
 		>
 			<FormProvider {...methods}>
 				<Box
 					sx={{
-						maxWidth: '500px',
+						gap: '20px',
 						width: '100%',
 						height: '100%',
-
+						display: 'grid',
+						maxWidth: '500px',
 						borderRadius: '4px',
 						padding: '10px 10px',
-						display: 'grid',
-						gap: '20px',
 					}}
 					component={'form'}
 					onSubmit={methods.handleSubmit(onSubmit)}

@@ -63,10 +63,10 @@ const Modal: FC<ModalProps> = memo(({ children }) => {
 		<Box className="modal" component="div">
 			<BootstrapDialog
 				fullScreen
-				aria-labelledby="customized-dialog-title"
 				open={open}
-				TransitionComponent={Transition}
 				keepMounted
+				TransitionComponent={Transition}
+				aria-labelledby="customized-dialog-title"
 			>
 				<BootstrapDialogTitle>Заявка на оформление кредита</BootstrapDialogTitle>
 				<DialogContent dividers>{children}</DialogContent>
