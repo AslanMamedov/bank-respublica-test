@@ -55,11 +55,11 @@ const CreditInfoForm = memo(() => {
 						}}
 						component={'div'}
 					>
-						<InputField label="Сумма" mask={''} name="sum" type="text" />
-						<InputField label="Период" mask={''} name="period" type="text" />
+						<InputField label="Сумма" mask={'0000000000'} name="sum" type="text" />
+						<InputField label="Период" mask={'00'} name="period" type="text" />
 					</Box>
 					<Box sx={{ width: '100%', display: 'grid', gap: '10px', marginTop: '10px' }} component={'div'}>
-						<InputField label="Процент" mask={''} name="percent" type="text" />
+						<InputField label="Процент" mask={'00'} name="percent" type="text" />
 					</Box>
 				</FormControl>
 				<Button

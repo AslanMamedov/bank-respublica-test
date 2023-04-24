@@ -31,8 +31,8 @@ interface ModalProps {
 export const schema = z.object({
 	cancle: z
 		.string()
-		.max(8, { message: 'Поле должно быть заполнена' })
-		.max(24, { message: 'Поле должно быть заполнена' }),
+		.min(16, { message: 'Поле должно быть заполнена' })
+		.max(56, { message: 'Поле должно быть заполнена' }),
 });
 export type CancleCredit = z.infer<typeof schema>;
 

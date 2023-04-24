@@ -1,24 +1,23 @@
-import { Box, Button } from '@mui/material';
 import { FormProvider, useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useDispatch } from 'react-redux';
 import InfoUserFormFields from './InfoUserFormFields';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { setUser } from '../redux/slices/UserSlice';
 import { useNavigate } from 'react-router-dom';
 import { UserSchema, schema } from '../types';
+import { Box, Button } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { FC, memo } from 'react';
 
-type SignUpSchema = UserSchema & {};
-
-const SignUp = () => {
+const SignUp: FC = memo(() => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	const methods = useForm<SignUpSchema>({
+	const methods = useForm<UserSchema>({
 		mode: 'onChange',
 		resolver: zodResolver(schema),
 	});
 
-	const onSubmit = (data: SignUpSchema) => {
+	const onSubmit = (data: UserSchema) => {
 		dispatch(setUser(data));
 		navigate(`/:${data.fin}`);
 		methods.reset();
@@ -71,6 +70,6 @@ const SignUp = () => {
 			</FormProvider>
 		</Box>
 	);
-};
+});
 
 export default SignUp;

@@ -17,7 +17,7 @@ const SignIn: FC = memo(() => {
 	});
 
 	const onSubmit = ({ fin }: SignInSchema) => {
-		if (StoreFin) {
+		if (StoreFin === fin) {
 			navigate(`/:${fin}`);
 			methods.reset();
 		}

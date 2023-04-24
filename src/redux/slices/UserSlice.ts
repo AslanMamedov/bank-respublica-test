@@ -21,15 +21,32 @@ export const userSlice = createSlice({
 	initialState,
 	reducers: {
 		setUser: (state, actions: PayloadAction<UserSchema>) => {
-			state = actions.payload;
 			return {
 				state,
 				...actions.payload,
 			};
 		},
+
+		deleteUser: (state) => {
+			state = {
+				fin: '',
+				cod: '',
+				name: '',
+				date: '',
+				phone: '',
+				seria: '',
+				address: '',
+				surname: '',
+				homenumber: '',
+				middlename: '',
+				registartion: '',
+				passportnumber: '',
+			};
+			return state;
+		},
 	},
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser, deleteUser } = userSlice.actions;
 
 export default userSlice.reducer;

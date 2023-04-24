@@ -3,6 +3,7 @@ import { clearGuarantorLists } from '../redux/slices/RequestSlice';
 import { Box, Button, CircularProgress } from '@mui/material';
 import { handleClickOpen } from '../redux/slices/ModalSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { deleteUser } from '../redux/slices/UserSlice';
 import { useNavigate } from 'react-router-dom';
 import FormStepper from '../Forms/FormStepper';
 import { FC, memo, useEffect } from 'react';
@@ -35,6 +36,7 @@ const User: FC = memo(() => {
 		navigate('/');
 	};
 	const deleteAccauntHandler = () => {
+		dispatch(deleteUser());
 		navigate('/');
 	};
 	useEffect(() => {
