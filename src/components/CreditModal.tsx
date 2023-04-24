@@ -1,6 +1,5 @@
 import { handlerCloseDelete } from '../redux/slices/ModalSlice';
 import { deleteCredit } from '../redux/slices/RequestSlice';
-import { FC, memo, useCallback, useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { Box, IconButton, styled } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
@@ -9,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { zodResolver } from '@hookform/resolvers/zod';
 import DialogTitle from '@mui/material/DialogTitle';
 import CloseIcon from '@mui/icons-material/Close';
+import { FC, memo, useCallback } from 'react';
 import { RootState } from '../redux/store';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -86,7 +86,7 @@ const CreditModal: FC<ModalProps> = memo(({ index }) => {
 						<InputField label="Описание" mask={''} name="cancle" type="text" />
 					</DialogContent>
 					<DialogActions>
-						<Button autoFocus variant="outlined" type="submit">
+						<Button disabled={!methods.formState.isValid} autoFocus variant="outlined" type="submit">
 							Удалить оформленный кредит
 						</Button>
 					</DialogActions>

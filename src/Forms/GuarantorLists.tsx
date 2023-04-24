@@ -1,11 +1,11 @@
 import { handleClickOpenGuarantor, handleCloseGuarantor } from '../redux/slices/ModalSlice';
-import { Box, Button, FormControl, DialogActions } from '@mui/material';
 import { addGuarantorLists, clearGuarantors } from '../redux/slices/RequestSlice';
+import { Box, Button, FormControl, DialogActions } from '@mui/material';
 import GuarantorModal from '../components/GuarantorModal';
 import { handleNext } from '../redux/slices/StepperSlice';
-import { useSelector, useDispatch } from 'react-redux';
 import { FormProvider, useForm } from 'react-hook-form';
 import { FC, memo, useCallback, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import InfoUserFormFields from './InfoUserFormFields';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { UserSchema, schema } from '../types';
@@ -51,13 +51,13 @@ const GuarantorLists: FC = memo(() => {
 			}}
 		>
 			<Button
-				variant="outlined"
-				onClick={onOpenModalHandler}
 				sx={{
 					width: '200px',
 					marginBottom: '15px',
 				}}
 				type={'button'}
+				variant="outlined"
+				onClick={onOpenModalHandler}
 			>
 				Добавить поручителя
 			</Button>
@@ -66,7 +66,6 @@ const GuarantorLists: FC = memo(() => {
 					<FormProvider {...methods}>
 						<Box
 							component={'form'}
-							onSubmit={methods.handleSubmit(onSubmit)}
 							sx={{
 								gap: '20px',
 								width: '100%',
@@ -75,6 +74,7 @@ const GuarantorLists: FC = memo(() => {
 								borderRadius: '4px',
 								padding: '10px 10px',
 							}}
+							onSubmit={methods.handleSubmit(onSubmit)}
 						>
 							<InfoUserFormFields />
 							<DialogActions>
@@ -153,11 +153,11 @@ const GuarantorLists: FC = memo(() => {
 			</FormControl>
 
 			<Button
-				onClick={() => dispatch(handleNext())}
-				variant="outlined"
 				type={'submit'}
-				disabled={guarantorLists.length === 0}
+				variant="outlined"
 				sx={{ marginTop: '20px' }}
+				disabled={guarantorLists.length === 0}
+				onClick={() => dispatch(handleNext())}
 			>
 				Далее
 			</Button>

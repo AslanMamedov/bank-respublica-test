@@ -128,10 +128,10 @@ const User: FC = memo(() => {
 				>
 					<Box
 						sx={{
-							minHeight: '100%',
-							display: 'flex',
 							justifyContent: 'space-between',
 							flexDirection: 'column',
+							minHeight: '100%',
+							display: 'flex',
 							gap: '25px',
 						}}
 						component={'div'}

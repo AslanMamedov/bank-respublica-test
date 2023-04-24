@@ -20,13 +20,6 @@ export const userSlice = createSlice({
 	name: 'user',
 	initialState,
 	reducers: {
-		setUser: (state, actions: PayloadAction<UserSchema>) => {
-			return {
-				state,
-				...actions.payload,
-			};
-		},
-
 		deleteUser: (state) => {
 			state = {
 				fin: '',
@@ -43,6 +36,13 @@ export const userSlice = createSlice({
 				passportnumber: '',
 			};
 			return state;
+		},
+
+		setUser: (state, actions: PayloadAction<UserSchema>) => {
+			return {
+				state,
+				...actions.payload,
+			};
 		},
 	},
 });

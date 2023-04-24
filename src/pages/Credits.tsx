@@ -27,17 +27,17 @@ const Credits: FC = memo(() => {
 				sx={{
 					marginBottom: '20px',
 				}}
-				onClick={() => navigate(-1)}
 				variant="outlined"
+				onClick={() => navigate(-1)}
 			>
 				Назад
 			</Button>
 			<Box
-				component={'div'}
 				sx={{
 					display: 'flex',
 					gap: '10px',
 				}}
+				component={'div'}
 			>
 				{!!credits.length &&
 					credits.map((credit: Request, index: number) => (
@@ -45,8 +45,8 @@ const Credits: FC = memo(() => {
 							sx={{
 								width: '250px',
 							}}
-							variant="outlined"
 							key={index}
+							variant="outlined"
 						>
 							<CardContent>
 								<Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>

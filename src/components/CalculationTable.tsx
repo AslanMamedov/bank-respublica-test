@@ -28,9 +28,9 @@ const CalculationTable: FC = memo(() => {
 					/>
 				))}
 			<Button
-				onClick={() => dispatch(handleNext())}
-				variant="outlined"
 				type={'submit'}
+				variant="outlined"
+				onClick={() => dispatch(handleNext())}
 				sx={{ marginTop: '20px', width: '200px' }}
 			>
 				Далее

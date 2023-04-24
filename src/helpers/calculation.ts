@@ -5,7 +5,6 @@ export const calculatePaymentPlan = (loanAmount: number, interestRate: number, p
 	const payment = (monthlyInterestRate * loanAmount) / (1 - Math.pow(1 + monthlyInterestRate, -paymentPeriod));
 	let balance = loanAmount;
 	const paymentPlan = [];
-
 	for (let i = 0; i < paymentPeriod; i++) {
 		const interest = balance * monthlyInterestRate;
 		const principal = payment - interest;

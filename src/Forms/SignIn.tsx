@@ -54,18 +54,18 @@ const SignIn: FC = memo(() => {
 					<InputField label="Фин" mask={''} name="fin" type="text" />
 
 					<Button
+						type="submit"
 						variant="outlined"
 						disabled={!methods.formState.isValid}
 						sx={{ height: '50px', fontSize: '18px' }}
-						type="submit"
 					>
 						Войти
 					</Button>
 					<Button
-						variant="outlined"
-						sx={{ height: '50px', fontSize: '18px' }}
-						onClick={() => navigate('/signUp')}
 						type="submit"
+						variant="outlined"
+						onClick={() => navigate('/signUp')}
+						sx={{ height: '50px', fontSize: '18px' }}
 					>
 						Регистрация
 					</Button>

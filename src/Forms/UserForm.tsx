@@ -34,21 +34,21 @@ const UserForm = () => {
 		<FormProvider {...methods}>
 			<Box
 				component={'form'}
-				onSubmit={methods.handleSubmit(onSubmit)}
 				sx={{
 					display: 'flex',
 					alignItems: 'center',
 					flexDirection: 'column',
 					justifyContent: 'center',
 				}}
+				onSubmit={methods.handleSubmit(onSubmit)}
 			>
 				<FormControl sx={{ width: '800px', height: '100%', maxHeight: '100%' }} error={true} variant="standard">
 					<Typography sx={{ fontSize: 20 }}>Информация о клиенте</Typography>
 					<Box sx={{ width: '100%', display: 'grid', gap: '10px', marginTop: '10px' }} component={'div'}>
 						<InputField label="Сфера деятельности" mask={''} name="fieldActivity" type="text" />
 						<InputField
-							label="Месячный доход"
 							mask={'AZE:000000000000000'}
+							label="Месячный доход"
 							name="monthlyIncome"
 							type="text"
 						/>

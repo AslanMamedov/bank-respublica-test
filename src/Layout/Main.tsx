@@ -7,8 +7,6 @@ interface MainProps {
 
 const Main: FC<MainProps> = memo(({ children }) => (
 	<Box
-		maxWidth="sm"
-		className="container"
 		sx={{
 			display: 'flex',
 			width: '1440px',
@@ -18,6 +16,8 @@ const Main: FC<MainProps> = memo(({ children }) => (
 			padding: '15px 15px',
 			justifyContent: 'center',
 		}}
+		maxWidth="sm"
+		className="container"
 	>
 		{children}
 	</Box>

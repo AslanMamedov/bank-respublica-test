@@ -1,5 +1,5 @@
-import { FC, MouseEventHandler, PropsWithChildren, forwardRef, memo} from 'react';
-import { addCredits, resetRequest } from '../redux/slices/RequestSlice';
+import { FC, MouseEventHandler, PropsWithChildren, forwardRef, memo } from 'react';
+import { addCredits } from '../redux/slices/RequestSlice';
 import { TransitionProps } from '@mui/material/transitions';
 import { handleReset } from '../redux/slices/StepperSlice';
 import DialogContent from '@mui/material/DialogContent';
@@ -43,12 +43,10 @@ interface ModalProps {
 
 const Modal: FC<ModalProps> = memo(({ children }) => {
 	const dispatch = useDispatch();
-	const { open, steps, activeStep } = useSelector((state: RootState) => {
-		return {
-			...state.StepperSlice,
-			...state.ModalSlice,
-		};
-	});
+	const { open, steps, activeStep } = useSelector((state: RootState) => ({
+		...state.StepperSlice,
+		...state.ModalSlice,
+	}));
 
 	const onExitHandler: MouseEventHandler<HTMLButtonElement> = () => {
 		dispatch(handleReset());

@@ -28,28 +28,12 @@ export const requestSlice = createSlice({
 	name: 'request',
 	initialState,
 	reducers: {
-		addUserInfo: (state, actions: PayloadAction<UserInfoForm>) => {
-			state.userInfo = actions.payload;
-			return state;
-		},
-		addCreditInfo: (state, actions: PayloadAction<CreditForm>) => {
-			state.creditInfo = actions.payload;
-			const { period, percent, sum } = state.creditInfo;
-			state.calculation = calculatePaymentPlan(Number(sum), Number(percent), Number(period));
-			return state;
-		},
-
-		addGuarantorLists: (state, actions: PayloadAction<UserSchema>) => {
-			state.guarantorLists.push(actions.payload);
-			return state;
-		},
-
-		clearGuarantorLists: (state) => {
-			state.allGuarantors = [];
-			return state;
-		},
 		clearGuarantors: (state) => {
 			state.guarantorLists = [];
+			return state;
+		},
+		clearGuarantorLists: (state) => {
+			state.allGuarantors = [];
 			return state;
 		},
 
@@ -72,7 +56,22 @@ export const requestSlice = createSlice({
 			state.creditInfo = { ...state.creditInfo };
 			return state;
 		},
+		addUserInfo: (state, actions: PayloadAction<UserInfoForm>) => {
+			state.userInfo = actions.payload;
+			return state;
+		},
 
+		addGuarantorLists: (state, actions: PayloadAction<UserSchema>) => {
+			state.guarantorLists.push(actions.payload);
+			return state;
+		},
+
+		addCreditInfo: (state, actions: PayloadAction<CreditForm>) => {
+			state.creditInfo = actions.payload;
+			const { period, percent, sum } = state.creditInfo;
+			state.calculation = calculatePaymentPlan(Number(sum), Number(percent), Number(period));
+			return state;
+		},
 		deleteCredit: (state, actions: PayloadAction<number>) => {
 			state.credits = state.credits.filter((_, index) => index !== actions.payload);
 			const guarantors = state.allGuarantors.filter((_, index) => index !== actions.payload);

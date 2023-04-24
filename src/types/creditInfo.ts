@@ -8,7 +8,6 @@ export const creditSchema = z.object({
 		.string()
 		.min(16, { message: 'Поле должно быть заполнена' })
 		.max(32, { message: 'Поле должно быть заполнена' }),
-	sum: z.string().min(1, { message: 'Поле должно быть заполнена' }).max(9, { message: 'Поле должно быть заполнена' }),
 	period: z
 		.string()
 		.min(1, { message: 'Поле должно быть заполнена' })
@@ -17,6 +16,7 @@ export const creditSchema = z.object({
 		.string()
 		.min(1, { message: 'Поле должно быть заполнена' })
 		.max(2, { message: 'Поле должно быть заполнена' }),
+	sum: z.string().min(1, { message: 'Поле должно быть заполнена' }).max(9, { message: 'Поле должно быть заполнена' }),
 });
 
 export type CreditForm = z.infer<typeof creditSchema>;

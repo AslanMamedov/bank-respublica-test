@@ -3,8 +3,6 @@ import { FC, memo } from 'react';
 
 const Header: FC = memo(() => (
 	<Box
-		component="header"
-		className="header"
 		sx={{
 			height: '100px',
 			display: 'flex',
@@ -14,6 +12,8 @@ const Header: FC = memo(() => (
 			justifyContent: 'center',
 			backgroundColor: '#eeeff1',
 		}}
+		component="header"
+		className="header"
 	>
 		<Typography
 			variant="h1"

@@ -15,13 +15,13 @@ const InfoUserFormFields: FC = memo(() => {
 				<InputField label="Фамилия" mask={''} name="surname" type="text" />
 				<InputField label="Отчество" mask={''} name="middlename" type="text" />
 				<InputField
-					label="Дата рождения"
-					mask={Date}
-					format={onFormatHandler}
-					pattern="Y-`m-`d"
 					name="date"
 					type="text"
+					mask={Date}
+					pattern="Y-`m-`d"
+					label="Дата рождения"
 					parse={onParseHandler}
+					format={onFormatHandler}
 				/>
 			</Box>
 			<Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }} component={'div'}>

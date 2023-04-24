@@ -51,18 +51,18 @@ const SignUp: FC = memo(() => {
 				>
 					<InfoUserFormFields />
 					<Button
-						disabled={!methods.formState.isValid}
-						variant="outlined"
-						sx={{ height: '50px', fontSize: '18px' }}
 						type="submit"
+						variant="outlined"
+						disabled={!methods.formState.isValid}
+						sx={{ height: '50px', fontSize: '18px' }}
 					>
 						Регистрация
 					</Button>
 					<Button
-						variant="outlined"
-						sx={{ height: '50px', fontSize: '18px' }}
-						onClick={() => navigate('/')}
 						type="submit"
+						variant="outlined"
+						onClick={() => navigate('/')}
+						sx={{ height: '50px', fontSize: '18px' }}
 					>
 						Войти
 					</Button>

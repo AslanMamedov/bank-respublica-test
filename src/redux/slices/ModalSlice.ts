@@ -3,23 +3,19 @@ import { Modal } from '../../types';
 
 const initialState: Modal = {
 	open: false,
-	guarantorIsOpen: false,
 	creditIsOpen: false,
+	guarantorIsOpen: false,
 };
 
 export const modalSlice = createSlice({
 	name: 'modal',
 	initialState,
 	reducers: {
-		handleClickOpen: (state) => {
-			state.open = true;
-		},
-
 		handleClose: (state) => {
 			state.open = false;
 		},
-		handleClickOpenGuarantor: (state) => {
-			state.guarantorIsOpen = true;
+		handleClickOpen: (state) => {
+			state.open = true;
 		},
 
 		handleCloseGuarantor: (state) => {
@@ -31,6 +27,9 @@ export const modalSlice = createSlice({
 		},
 		handlerCloseDelete: (state) => {
 			state.creditIsOpen = false;
+		},
+		handleClickOpenGuarantor: (state) => {
+			state.guarantorIsOpen = true;
 		},
 	},
 });
