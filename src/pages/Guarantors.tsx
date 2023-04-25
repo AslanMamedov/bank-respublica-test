@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { Box, Button } from '@mui/material';
 import { RootState } from '../redux/store';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../hooks';
 import { Table } from '../components';
 import { FC, memo } from 'react';
 
 const Guarantors: FC = memo(() => {
-	const { allGuarantors } = useSelector((state: RootState) => state.RequestSlice);
+	const { allGuarantors } = useAppSelector((state: RootState) => state.RequestSlice);
 	const navigate = useNavigate();
 	return (
 		<Box sx={{}} component={'section'}>

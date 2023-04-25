@@ -1,6 +1,6 @@
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
 import { handlerClicOpenDelete } from '../redux/slices/ModalSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../hooks';
 import { useNavigate } from 'react-router-dom';
 import { FC, memo, useEffect } from 'react';
 import { CreditModal } from '../components';
@@ -8,12 +8,12 @@ import { RootState } from '../redux/store';
 import { Request } from '../types';
 
 const Credits: FC = memo(() => {
-	const { credits, name, surname, middlename } = useSelector((state: RootState) => ({
+	const { credits, name, surname, middlename } = useAppSelector((state: RootState) => ({
 		...state.RequestSlice,
 		...state.UserSlice,
 	}));
 	const navigate = useNavigate();
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 	useEffect(() => {
 		if (credits.length !== 0) {

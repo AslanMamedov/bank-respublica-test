@@ -2,7 +2,7 @@ import React, { FC, ReactNode, memo } from 'react';
 import StepLabel from '@mui/material/StepLabel';
 import Stepper from '@mui/material/Stepper';
 import { RootState } from '../redux/store';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../hooks';
 import Step from '@mui/material/Step';
 import Box from '@mui/material/Box';
 
@@ -11,7 +11,7 @@ interface StepperProps {
 }
 
 const StepperContainer: FC<StepperProps> = memo(({ renderProps }) => {
-	const { activeStep, steps } = useSelector((state: RootState) => state.StepperSlice);
+	const { activeStep, steps } = useAppSelector((state: RootState) => state.StepperSlice);
 
 	return (
 		<Box

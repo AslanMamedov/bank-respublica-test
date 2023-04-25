@@ -5,12 +5,12 @@ import { setUser } from '../redux/slices/UserSlice';
 import { useNavigate } from 'react-router-dom';
 import { UserSchema, schema } from '../types';
 import { Box, Button } from '@mui/material';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../hooks';
 import { FC, memo } from 'react';
 
 const SignUp: FC = memo(() => {
 	const navigate = useNavigate();
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 	const methods = useForm<UserSchema>({
 		mode: 'onChange',

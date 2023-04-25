@@ -1,10 +1,10 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material';
 import { FC, Fragment, SyntheticEvent, memo, useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { Table } from '../components';
 import { Payment } from '../types';
+import { useAppSelector } from '../hooks';
 
 const RequestInformation: FC = memo(() => {
 	const {
@@ -12,7 +12,7 @@ const RequestInformation: FC = memo(() => {
 		creditInfo: { businessCredit, currency, percent, period, sum },
 		guarantorLists,
 		userInfo: { businessAddress, fieldActivity, month, monthlyIncome, region, year },
-	} = useSelector((state: RootState) => state.RequestSlice);
+	} = useAppSelector((state: RootState) => state.RequestSlice);
 	const [expanded, setExpanded] = useState<string | false>(false);
 
 	const handleChange = (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {

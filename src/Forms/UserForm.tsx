@@ -2,16 +2,16 @@ import { Box, Button, FormControl, Typography } from '@mui/material';
 import { UserInfoForm, userInfoSchema } from '../types/userInfo';
 import { addUserInfo } from '../redux/slices/RequestSlice';
 import { handleNext } from '../redux/slices/StepperSlice';
+import { useAppSelector, useAppDispatch } from '../hooks';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useEffect } from 'react';
 import { InputField } from '../components';
 import { RootState } from '../redux/store';
 
 const UserForm = () => {
-	const { open } = useSelector((state: RootState) => state.ModalSlice);
-	const dispatch = useDispatch();
+	const { open } = useAppSelector((state: RootState) => state.ModalSlice);
+	const dispatch = useAppDispatch();
 	const methods = useForm<UserInfoForm>({
 		mode: 'onChange',
 		resolver: zodResolver(userInfoSchema),

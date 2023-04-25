@@ -6,10 +6,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { CreditForm, creditSchema } from '../types';
 import { InputField } from '../components';
 import { memo, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../hooks';
+
 
 const CreditInfoForm = memo(() => {
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 	const methods = useForm<CreditForm>({
 		mode: 'onChange',
 		resolver: zodResolver(creditSchema),

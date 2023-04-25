@@ -1,9 +1,8 @@
-
 import { removeLoading, setLoading } from '../redux/slices/LoadingSlice';
 import { clearGuarantorLists } from '../redux/slices/RequestSlice';
 import { Box, Button, CircularProgress } from '@mui/material';
 import { handleClickOpen } from '../redux/slices/ModalSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../hooks';
 import { deleteUser } from '../redux/slices/UserSlice';
 import { useNavigate } from 'react-router-dom';
 import FormStepper from '../Forms/FormStepper';
@@ -14,7 +13,7 @@ import { Table } from '../components';
 
 const User: FC = memo(() => {
 	const navigate = useNavigate();
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 	const {
 		cod,
 		fin,
@@ -31,7 +30,7 @@ const User: FC = memo(() => {
 		registartion,
 		allGuarantors,
 		passportnumber,
-	} = useSelector((state: RootState) => ({ ...state.UserSlice, ...state.RequestSlice, ...state.LoadingSlice }));
+	} = useAppSelector((state: RootState) => ({ ...state.UserSlice, ...state.RequestSlice, ...state.LoadingSlice }));
 
 	const logOutHandler = () => {
 		navigate('/');

@@ -1,11 +1,11 @@
 import { handleClickOpenGuarantor, handleCloseGuarantor } from '../redux/slices/ModalSlice';
 import { addGuarantorLists, clearGuarantors } from '../redux/slices/RequestSlice';
 import { Box, Button, FormControl, DialogActions } from '@mui/material';
+import { useAppDispatch, useAppSelector } from '../hooks';
 import GuarantorModal from '../components/GuarantorModal';
 import { handleNext } from '../redux/slices/StepperSlice';
 import { FormProvider, useForm } from 'react-hook-form';
 import { FC, memo, useCallback, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import InfoUserFormFields from './InfoUserFormFields';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { UserSchema, schema } from '../types';
@@ -13,8 +13,8 @@ import { RootState } from '../redux/store';
 import { Table } from '../components';
 
 const GuarantorLists: FC = memo(() => {
-	const dispatch = useDispatch();
-	const { guarantorLists } = useSelector((state: RootState) => state.RequestSlice);
+	const dispatch = useAppDispatch();
+	const { guarantorLists } = useAppSelector((state: RootState) => state.RequestSlice);
 
 	const methods = useForm<UserSchema>({
 		mode: 'onChange',

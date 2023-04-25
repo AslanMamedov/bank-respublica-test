@@ -1,10 +1,10 @@
 import { handlerCloseDelete } from '../redux/slices/ModalSlice';
 import { deleteCredit } from '../redux/slices/RequestSlice';
+import { useAppSelector, useAppDispatch } from '../hooks';
 import { FormProvider, useForm } from 'react-hook-form';
 import { Box, IconButton, styled } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import { useDispatch, useSelector } from 'react-redux';
 import { zodResolver } from '@hookform/resolvers/zod';
 import DialogTitle from '@mui/material/DialogTitle';
 import CloseIcon from '@mui/icons-material/Close';
@@ -37,8 +37,8 @@ export const schema = z.object({
 export type CancleCredit = z.infer<typeof schema>;
 
 const CreditModal: FC<ModalProps> = memo(({ index }) => {
-	const { creditIsOpen } = useSelector((state: RootState) => state.ModalSlice);
-	const dispatch = useDispatch();
+	const { creditIsOpen } = useAppSelector((state: RootState) => state.ModalSlice);
+	const dispatch = useAppDispatch();
 
 	const methods = useForm<CancleCredit>({
 		mode: 'onChange',

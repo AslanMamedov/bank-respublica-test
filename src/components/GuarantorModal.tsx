@@ -1,7 +1,7 @@
 import { handleCloseGuarantor } from '../redux/slices/ModalSlice';
 import { TransitionProps } from '@mui/material/transitions';
+import { useAppSelector, useAppDispatch } from '../hooks';
 import DialogContent from '@mui/material/DialogContent';
-import { useSelector, useDispatch } from 'react-redux';
 import DialogTitle from '@mui/material/DialogTitle';
 import { FC, forwardRef, memo } from 'react';
 import { RootState } from '../redux/store';
@@ -22,8 +22,8 @@ interface GuarantorModalProps {
 }
 
 const GuarantorModal: FC<GuarantorModalProps> = memo(({ children }) => {
-	const { guarantorIsOpen } = useSelector((state: RootState) => state.ModalSlice);
-	const dispatch = useDispatch();
+	const { guarantorIsOpen } = useAppSelector((state: RootState) => state.ModalSlice);
+	const dispatch = useAppDispatch();
 
 	return (
 		<Dialog

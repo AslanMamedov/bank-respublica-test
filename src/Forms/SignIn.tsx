@@ -5,11 +5,11 @@ import InputField from '../components/InputField';
 import { useNavigate } from 'react-router-dom';
 import { Box, Button } from '@mui/material';
 import { RootState } from '../redux/store';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../hooks';
 import { FC, memo } from 'react';
 
 const SignIn: FC = memo(() => {
-	const { fin: StoreFin } = useSelector((state: RootState) => state.UserSlice);
+	const { fin: StoreFin } = useAppSelector((state: RootState) => state.UserSlice);
 	const navigate = useNavigate();
 	const methods = useForm<SignInSchema>({
 		mode: 'onChange',

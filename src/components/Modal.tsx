@@ -2,10 +2,10 @@ import { FC, MouseEventHandler, PropsWithChildren, forwardRef, memo } from 'reac
 import { addCredits } from '../redux/slices/RequestSlice';
 import { TransitionProps } from '@mui/material/transitions';
 import { handleReset } from '../redux/slices/StepperSlice';
+import { useAppDispatch, useAppSelector } from '../hooks';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import { handleClose } from '../redux/slices/ModalSlice';
-import { useDispatch, useSelector } from 'react-redux';
 import DialogTitle from '@mui/material/DialogTitle';
 import { styled } from '@mui/material/styles';
 import { RootState } from '../redux/store';
@@ -42,8 +42,8 @@ interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = memo(({ children }) => {
-	const dispatch = useDispatch();
-	const { open, steps, activeStep } = useSelector((state: RootState) => ({
+	const dispatch = useAppDispatch();
+	const { open, steps, activeStep } = useAppSelector((state: RootState) => ({
 		...state.StepperSlice,
 		...state.ModalSlice,
 	}));

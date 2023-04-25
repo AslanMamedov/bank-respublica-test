@@ -1,5 +1,5 @@
 import { handleNext } from '../redux/slices/StepperSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../hooks';
 import { Box, Button } from '@mui/material';
 import { RootState } from '../redux/store';
 import { Table } from '../components';
@@ -7,8 +7,8 @@ import { Payment } from '../types';
 import { FC, memo } from 'react';
 
 const CalculationTable: FC = memo(() => {
-	const { calculation } = useSelector((state: RootState) => state.RequestSlice);
-	const dispatch = useDispatch();
+	const { calculation } = useAppSelector((state: RootState) => state.RequestSlice);
+	const dispatch = useAppDispatch();
 
 	return (
 		<Box
